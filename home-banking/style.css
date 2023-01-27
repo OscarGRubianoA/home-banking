@@ -59,13 +59,12 @@ header a {
     height: 47.2vh;
 }  */
 .carrusel1 {
-  width: 365.13px;
-  height: 222px;
+  width: 40rem;
+  
 }
 .container1 {
   height: 50vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  border: 1px solid black;
+  
+  
 }
