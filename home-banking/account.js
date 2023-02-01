@@ -1,10 +1,10 @@
-const {createAPP}=Vue
+const {createApp}=Vue
 
-CreateApp({
+createApp({
     data(){
         return{
             dates:null,
-            url:"http://localhost:8080/api/clients",
+            url:"http://localhost:8080/api/clients/",
             firstClient:"",
             lastNameClient:"",
             emailClient:"",
@@ -18,17 +18,18 @@ CreateApp({
 
         loadData(url){
             axios.get(url)
-            then((response)=>{
+            .then((response)=>{
                 
                 this.dates=response;
-                this.firstClient=this.date.dates[0].firstName;
-                this.lastNameClient=this.date.dates[0].lastName;
-                this.emailClient=this.date.dates[0].email;
-                this.accountsClient=this.date.dates[0].account;
+                this.firstClient=this.dates[0].firstName;
+                this.lastNameClient=this.dates[0].lastName;
+                this.emailClient=this.dates[0].email;
+                this.accountsClient=this.dates[0].account;
 
             })
+            console.log('dates')
         }
     
     
     }
-}),mount("#app")
+}).mount('#App')
