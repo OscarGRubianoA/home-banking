@@ -13,21 +13,22 @@ createApp({
 
         }
     },created(){
-        this.loadData(this.url)
+        this.loadData()
     },methods:{
 
-        loadData(url){
-            axios.get(url)
+        loadData(){
+            axios.get("http://localhost:8080/api/clients/")
             .then((response)=>{
-                
+                console.log(response)
                 this.dates=response;
                 this.firstClient=this.dates[0].firstName;
+                console.log(this.firstlient)
                 this.lastNameClient=this.dates[0].lastName;
                 this.emailClient=this.dates[0].email;
                 this.accountsClient=this.dates[0].account;
 
             })
-            console.log('dates')
+            
         }
     
     
