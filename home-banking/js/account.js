@@ -29,8 +29,20 @@ createApp({
 
             })
             
-        }
+        },methods : 
+        {
+            displayTime() {
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            document.getElementById("clock").innerHTML = hours + ":" + minutes;
+         }
+         
     
-    
+        } 
     }
+    ,//Ejecuto las funciones para mostrar los datos en las tablas correspondientes en el html
+  mounted() {
+    setInterval(displayTime, 1000);
+  }
 }).mount('#App')
